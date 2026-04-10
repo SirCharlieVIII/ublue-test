@@ -11,8 +11,10 @@ set -ouex pipefail
 
 # Add RPM Fusion repos for Steam
 dnf5 -y install \  
-    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-"$(rpm -E %fedora)".noarch.rpm \  
-    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-"$(rpm -E %fedora)".noarch.rpm  
+https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
+
+dnf5 config-manager setopt fedora-cisco-openh264.enabled=1
 
 # this installs a package from fedora repos
 dnf5 install -y
