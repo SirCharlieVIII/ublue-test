@@ -17,7 +17,7 @@ https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E 
 dnf5 config-manager setopt fedora-cisco-openh264.enabled=1
 
 # this installs a package from fedora repos
-dnf5 install -y fastfetch steam gamemode openvpn
+dnf5 -y install fastfetch steam gamemode openvpn
 
 # Use a COPR Example:
 #
